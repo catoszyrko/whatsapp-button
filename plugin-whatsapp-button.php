@@ -8,9 +8,10 @@
         Author URI:        https://github.com/catoszyrko/
     */
     
-    add_action('wp_head','plugin');
+    add_action('wp_head','plugin_ws');
 
-    function plugin (){
+    function plugin_ws (){
+       
         $styles = "
             position: fixed; 
             bottom: 4em;
@@ -23,6 +24,8 @@
             color:white;
             box-shadow:1px 1px 1px #333333;
         ";
+
+
         $phone =  empty($phone) ? $phone = "5491164230533" : $phone = "asd";
         
         $plugin = '<a href="https://api.whatsapp.com/send?phone='.$phone.'" class="btn btn-success btn-circle btn-lg " target="_blank" id="whatsapp-button" style="'.$styles.'">
@@ -33,7 +36,6 @@
 
     }
 
-    add_action( 'init', 'plugin' );
 
 
 
